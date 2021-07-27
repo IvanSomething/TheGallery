@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+.sign_in-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logo-text {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  margin-bottom: 30px;
+}
+
+input {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.email-form {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.password-form{
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.check-form{
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.submit-form{
+  text-align: center;
+}
+
+.btn.btn-primary {
+  width: 400px;
+  text-align: center;
+  border-radius: 20px;
+}

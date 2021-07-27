@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+.navbar-brand {
+  margin: auto;
+  width: 100px;
+  height: 40px;
+  font-family: "Dancing Script", cursive;
+  font-size: 23px;
+}
+
+ul.navbar-nav.mr-auto {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+input.form-control {
+  width: 400px;
+  border-radius: 100px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  min-width: 0px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: list-item;
+  width: 95px;
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  text-align: center;
+}
+
+.nav-link.dropdown-toggle.admin-name {
+  color: blueviolet;
+}

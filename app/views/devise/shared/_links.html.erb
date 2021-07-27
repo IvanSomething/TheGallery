@@ -1,0 +1,16 @@
+<hr>
+
+<div class="links-group">
+  <%- if controller_name != 'sessions' %>
+    <a class="sign_in" href="/users/sign_in">Already have an account? Sign in.</a> <br />
+  <% end -%>
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    <a class="sign_up" href="/users/sign_up">Not registered yet? Sign up.</a> <br />
+  <% end -%>
+  <%- if devise_mapping.omniauthable? %>
+    <a class="oauth-container" data-method="post" href="/users/auth/google_oauth2">
+      <img width="20px" alt="Google sign-in" 
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+    </a>
+  <% end -%>
+</div>

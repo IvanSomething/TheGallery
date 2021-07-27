@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch('THEGALLERY_2021_DATABASE_NAME') {} %>
+  password: <%= ENV.fetch('THEGALLERY_2021_DATABASE_PASSWORD') {} %>
+  host: <%= ENV.fetch("DATABASE_HOST") { 'localhost' } %>
+  port: <%= ENV.fetch("DATABASE_PORT") { '5432' } %>
+
+
+
+development:
+  <<: *default
+  database: the_gallery_development
+
+test:
+  <<: *default
+  database: the_gallery_test
+
+production:
+  <<: *default
+  database: TheGallery_2021_production
+  username: TheGallery_2021
+  password: <%= ENV['THEGALLERY_2021_DATABASE_PASSWORD'] %>

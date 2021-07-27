@@ -1,0 +1,24 @@
+<div class="row d-flex justify-content-center mt-100">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h5 style="color:grey;"><%= t :add_new_picture %></h5>
+      </div>
+      <div class="card-block">
+        <%= form_tag pictures_path, method: :post, multipart: true do %>
+          <span class="btn btn-secondary btn-file">
+            Choose File
+            <%= file_field_tag :image %>
+          </span></p>
+        <textarea name="description" id="description" class="form-control" placeholder="Add your description" minlength="0" maxlength="219" rows="2">
+        </textarea>
+        <div class="text-center m-t-20">
+          <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+            Upload now
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

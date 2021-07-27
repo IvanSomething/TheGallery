@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light navbar-static-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">TheGallery</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/pictures/new">Submit a photo</a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Language
+              </a>
+              <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdown">
+              <%= link_to_unless I18n.locale == :en, "English", locale: :en %></p>
+              <%= link_to_unless I18n.locale == :ru, "Русский", locale: :ru %>
+              </div>
+            </div>
+          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <div class="dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= current_user.email %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" data-method="delete" href="/users/sign_out">Sign out</a>
+                </div>
+              </div>
+            </li>
+          <% else %>
+              <a class="nav-link" href="/users/sign_in">Sign in</a>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+</nav>

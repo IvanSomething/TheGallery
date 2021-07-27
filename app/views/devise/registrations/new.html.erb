@@ -1,0 +1,31 @@
+<div class="sign_up-form">
+
+  <div class="logo-text">
+    <h1>TheGallery</h1>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= bootstrap_devise_error_messages! %>
+
+    <div class="email-form">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+    </div>
+
+    <div class="password-form">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+    </div>
+
+    <div class="password-confirmation-form">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+    </div>
+
+    <div class="submit-form">
+      <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'devise/shared/links' %>

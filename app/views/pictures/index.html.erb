@@ -1,0 +1,25 @@
+<div class="header_image img-fluid" style="background-image: url(<%= asset_path '159.jpg' %>)">
+  <div class="header_text_image">
+  <h1>Welcome to The Gallery<h1>
+  </div>
+</div>
+
+<div class="container">
+  <% displayed_pictures = @pictures + Array.new(@pictures.size%3) %>
+  <% displayed_pictures.each_slice(3) do |slice| %>
+  <div class="row">
+  <% slice.each do |picture| %>
+    <div class="col">
+      <div class="photo photo_img">
+        <%= link_to image_tag(picture.image.url(:medium)), edit_picture_path(picture) if picture.present? %>
+      </div>
+  </div>
+<% end %>
+<% end %>
+</div>
+
+<br />
+
+</div>
+
+

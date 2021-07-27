@@ -1,0 +1,22 @@
+<div class="admin-form">
+  <div class="admin-form-image">
+    <img src="<%= @picture.image.url(:medium) %>">
+  </div>
+
+  <div class="admin-form-description">
+	  <% if @picture.description != "" || @picture.description  %>
+      <h3>Description:</h3>
+		  <textarea cols="55" rows="4" readonly>
+    		<%= @picture.description %>
+			</textarea>
+		<% end %>
+  </div>
+  <% if current_user.admin? && @picture.status == 'pending' %>
+  <div class="admin-form-links">
+    <hr class="admin-form-hr">
+    <%= link_to 'Approve', approve_picture_path(@picture), method: :put %>
+    <a>OR</a>
+    <%= link_to 'Reject', reject_picture_path(@picture), method: :put %>
+  </div>
+  <% end %>
+</div>
